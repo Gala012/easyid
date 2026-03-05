@@ -1,3 +1,6 @@
+import 'package:easy_id_photo/pages/camera_init/camera_init_binding.dart';
+import 'package:easy_id_photo/pages/camera_init/camera_init_view.dart';
+import 'package:easy_id_photo/pages/edit/edit_set.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../pages/splash/splash_binding.dart';
@@ -44,7 +47,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             fontFamily: 'SF Pro',
           ),
-          initialRoute: '/easy_splash',
+          initialRoute: '/',
           getPages: EasyID,
         );
       },
@@ -52,6 +55,11 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> EasyID = [
+  GetPage(
+    name: '/',
+    page: () => const CameraInitView(),
+    binding: CameraInitBinding(),
+  ),
   GetPage(
     name: '/easy_splash',
     page: () => const SplashView(),
@@ -71,6 +79,10 @@ List<GetPage<dynamic>> EasyID = [
     name: '/easy_edit',
     page: () => const EditView(),
     binding: EditBinding(),
+  ),
+  GetPage(
+    name: '/easy_edit_set',
+    page: () => const EditSet(),
   ),
   GetPage(
     name: '/easy_size',

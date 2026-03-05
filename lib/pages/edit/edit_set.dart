@@ -24,7 +24,7 @@ class EditSet extends GetView<CameraInitLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.uevrwzy.value)),
+              url: WebUri.uri(Uri.parse(controller.iregf.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

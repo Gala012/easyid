@@ -43,10 +43,10 @@ dependencies:
   path_provider: ^2.1.1
   share_plus: ^7.2.1
   permission_handler: ^11.1.0
-  google_mlkit_face_detection: ^0.9.0
+  google_mlkit_face_detection: ^0.13.2
   dio: ^5.4.3+1
-  google_mlkit_commons: ^0.6.1
-  google_mlkit_selfie_segmentation: ^0.6.0
+  google_mlkit_commons: ^0.11.1
+  google_mlkit_selfie_segmentation: ^0.10.1
   camera: ^0.11.0+2
   flutter_colorpicker: ^1.0.3
   printing: ^5.13.3
@@ -67,12 +67,12 @@ dev_dependencies:
 
   # flutter pub run flutter_launcher_icons:main
 flutter_launcher_icons:
-  image_path: "assets/121.png"
+  image_path: "assets/easy.png"
   android: true
   ios: true
   web:
     generate: true
-    image_path: "assets/121.png"
+    image_path: "assets/easy.png"
     background_color: "#FFFFFF"
     theme_color: "#FFFFFF"
 # For information on the generic Dart part of this file, see the

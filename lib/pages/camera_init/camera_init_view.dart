@@ -11,8 +11,8 @@ class CameraInitView extends GetView<CameraInitLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.dajngf.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.xbryk.value
+              ? const CircularProgressIndicator(color: Colors.orange)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class CameraInitView extends GetView<CameraInitLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.nifdk();
+              controller.xeabpmvd();
             },
             icon: const Icon(
               Icons.restart_alt,

